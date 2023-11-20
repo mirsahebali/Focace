@@ -1,0 +1,21 @@
+#+title: Rules
+
+* Rules for an email to be valid
+** It should not begin with a number or a special character
+[No] 121@mail.com
+[Yes] abc@mail.com
+** It should contain only one "@"
+[No] abc@@mail.com
+[Yes] abc@mail.com
+** There should contain a word after  @
+[No] Hello@.com
+[Yes] hello@foo.com
+** It should have {.net, .com, .org} at the end
+[No] hello@foo.yolk
+[Yes] hello@foo.{net,com,org}
+
+
+
+* Example 
+ [ _hello@foo.com_ ] 
+1. [ [ hello ], [ @ ] ,[  foo ], [ .com ]]
