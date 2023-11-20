@@ -1,0 +1,31 @@
+<div id="todo" class="flex items-center justify-center flex-col gap-3">
+  <form
+    hx-post="/add-todo"
+    hx-target="#items"
+    hx-swap="afterbegin"
+    class="flex flex-col gap-2 items-center"
+  >
+    <input type="text" name="title" class="bg-slate-100 p-2 text-xl" />
+    <button>Add</button>
+  </form>
+  <ul id="items">
+    {{range .}}
+    <li
+      id="item-{{.Id}}"
+      draggable="true"
+      hx-trigger="click"
+      hx-post="/checked?id={{.Id}}"
+      hx-swap="outerHTML"
+      hx-target="#item-{{.Id}}"
+      class="{{if .Done}} strike {{end}} cursor-pointer "
+    >
+      {{.Title}}
+    </li>
+    <style>
+      .strike {
+        text-decoration: line-through;
+      }
+    </style>
+    {{end}}
+  </ul>
+</div>

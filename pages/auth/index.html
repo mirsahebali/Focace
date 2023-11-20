@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FocAce Authentication</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
+  </head>
+  <body>
+    <main
+      class="flex flex-col gap-4 items-center bg-gradient-to-br from-cyan-500 to-slate-300 h-[100vh]"
+    >
+      <div class="flex flex-col gap-4 items-center ">
+        <h2 class="text-2xl">Sign up</h2>
+        <form
+          hx-post="/signup"
+          class="flex flex-col gap-3 justify-center items-center"
+        >
+          <input
+            type="text"
+            name="Username"
+            id="username"
+            placeholder="Enter Username"
+            class="p-2 text-black rounded-lg focus:outline-none bg-white-500"
+          />
+          <input
+            type="text"
+            name="Email"
+            id="email"
+            placeholder="Enter Email"
+            class="p-2 text-black rounded-lg focus:outline-none bg-white-500"
+          />
+          <input
+            type="text"
+            name="Password"
+            id="password"
+            placeholder="Set password"
+            class="p-2 text-black rounded-lg focus:outline-none bg-white-500"
+          />
+          <input
+            type="text"
+            name="Password"
+            id="password_verify"
+            placeholder="enter password again"
+            class="p-2 text-black rounded-lg focus:outline-none bg-white-500"
+          />
+          <button
+            class="p-2 text-white bg-blue-600 rounded-lg ring-2 duration-300 hover:bg-blue-700 ring-zinc-50"
+          >
+            Sign Up
+          </button>
+        </form>
+      </div>
+      <hr class="my-10 border-2 border-double w-[100vw]" />
+      OR
+      <hr class="my-10 border-2 border-double w-[100vw]" />
+
+      <div class="flex flex-col items-center">
+        <h2 class="text-2xl">Log In</h2>
+        <form hx-post="/signin" class="flex flex-col gap-3 items-center">
+          <input
+            type="text"
+            name="Email"
+            id="email"
+            placeholder="Enter Email"
+            class="p-2 text-black rounded-lg focus:outline-none bg-white-500"
+          />
+          <input
+            type="text"
+            name="Password"
+            id="password"
+            placeholder="Enter password "
+            class="p-2 text-black rounded-lg focus:outline-none bg-white-500 "
+          />
+          <button
+            class="p-2 text-white bg-green-600 rounded-lg ring-2 duration-300 hover:bg-green-700 ring-zinc-50"
+          >
+            Log In
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

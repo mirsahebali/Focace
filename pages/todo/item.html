@@ -1,0 +1,16 @@
+<li
+  id="item-{{.Id}}"
+  draggable="true"
+  hx-trigger="click"
+  hx-post="/checked?id={{.Id}}"
+  hx-swap="outerHTML"
+  hx-target="#item-{{.Id}}"
+  class="{{if .Done}} strike {{end}} cursor-pointer "
+>
+  {{.Title}}
+</li>
+<style>
+  .strike {
+    text-decoration: line-through;
+  }
+</style>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FocAce</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="">
+      <!--Navbar-->
+      <div>
+        <ul class=" flex  gap-2 justify-center text-white">
+          <li
+            class="p-3 m-2  bg-blue-700 duration-300 cursor-pointer hover:text-black hover:bg-blue-400"
+            hx-post="/todo"
+            hx-swap="innerHTML"
+            hx-target="#panel"
+          >
+            Todo
+          </li>
+          <li
+            class="p-3  m-2 bg-blue-700 duration-300 cursor-pointer hover:text-black hover:bg-blue-400"
+            hx-post="/timer"
+            hx-swap="innerHTML"
+            hx-target="#panel"
+          >
+            Timer
+          </li>
+          <li
+            class="p-3  m-2 bg-blue-700 duration-300 cursor-pointer hover:text-black hover:bg-blue-400 "
+            hx-post="/stats"
+            hx-swap="innerHTML"
+            hx-target="#panel"
+          >
+            Stats
+          </li>
+        </ul>
+      </div>
+      <!--Panel-->
+      <section id="panel">
+      </section>
+    </main>
+  </body>
+</html>
