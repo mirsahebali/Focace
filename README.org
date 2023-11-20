@@ -1,0 +1,6 @@
+* Tech Stack
+** HTMX 
+** GO (standard libraries)
+** TailwindCSS
+** Javascript
+** PostgreSQL
