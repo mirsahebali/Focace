@@ -2,7 +2,7 @@ package tests
 
 import (
 	"fmt"
-	"mirsahebali/focace/auth"
+	"mirsahebali/focace/handlers/auth"
 	"testing"
 )
 

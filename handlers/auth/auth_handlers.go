@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"time"
 
+	"mirsahebali/focace/helpers/form"
 	"mirsahebali/focace/helpers/parsers"
 	"mirsahebali/focace/helpers/request"
 	"mirsahebali/focace/token"
@@ -15,7 +16,6 @@ var SECRET = parsers.GetEnvVars("FOCACE_AUTH_TOKEN")
 
 func SignUpHandler(w http.ResponseWriter, r *http.Request) {
 	// NOTE change this from r.PostFormValue to r.Header for broader use
-
 	if r.PostFormValue("Email") == "" {
 		request.WriteResponse(w, http.StatusNotAcceptable, "email not found")
 		return
@@ -31,7 +31,17 @@ func SignUpHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("username not found"))
 		return
 	}
+	// NOTE: This validates the email and password
+	checkEmail, checkPassword := form.FormValidator(r.PostFormValue("Email"), r.PostFormValue("Password"))
+	if !checkEmail {
+		request.WriteResponse(w, http.StatusBadRequest, "Invalid email")
+	}
+	if !checkPassword {
+		request.WriteResponse(w, http.StatusBadRequest, "Invalid password")
+	}
+
 	// NOTE change this from r.PostFormValue to r.Header for broader use
+	// NOTE checks if the user already exists
 	check := AddUserObject(User{
 		Username:     r.PostFormValue("Username"),
 		Email:        r.PostFormValue("Email"),
