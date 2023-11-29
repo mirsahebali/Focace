@@ -11,5 +11,6 @@ func InitTemplates(w http.ResponseWriter, _ *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
+
 	tmpl.Execute(w, nil)
 }

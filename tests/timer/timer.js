@@ -4,7 +4,8 @@ let minutes = document.getElementById("minutes"),
   startBtn = document.getElementById("start-btn"),
   resetBtn = document.getElementById("reset-btn"),
   increaseBtn = document.getElementById("increase"),
-  decreaseBtn = document.getElementById("decrease");
+  decreaseBtn = document.getElementById("decrease"),
+
 // INFO: Current state
 let state = {
   started: false,

@@ -15,7 +15,7 @@ import (
 var SECRET = parsers.GetEnvVars("FOCACE_AUTH_TOKEN")
 
 func SignUpHandler(w http.ResponseWriter, r *http.Request) {
-	// NOTE change this from r.PostFormValue to r.Header for broader use
+	// NOTE: change this from r.PostFormValue to r.Header for broader use
 	if r.PostFormValue("Email") == "" {
 		request.WriteResponse(w, http.StatusNotAcceptable, "email not found")
 		return
@@ -52,7 +52,7 @@ func SignUpHandler(w http.ResponseWriter, r *http.Request) {
 		request.WriteResponse(w, http.StatusConflict, "user already exists")
 		return
 	}
-	request.WriteResponse(w, http.StatusOK, "user created")
+	request.WriteResponse(w, http.StatusOK, "User created")
 }
 
 func getSignedToken() (string, error) {
